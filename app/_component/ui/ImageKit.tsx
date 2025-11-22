@@ -2,8 +2,8 @@ import { Image } from "@imagekit/next";
 
 type ImageKitPropsType = {
   src: string;
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   alt: string;
   className?: string;
   loading?: "eager" | "lazy";

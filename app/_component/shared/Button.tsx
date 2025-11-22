@@ -11,18 +11,21 @@ type ButtonPropsType = {
   loading?: boolean;
   icon?: React.ReactNode;
   src?: string;
+  imgWidth?: number;
+  imgHeight?: number;
   iconDir?: "right" | "left";
-  variant?: "primary";
+  variant?: "primary" | "transparent";
   handleClick?: () => void;
   className?: string;
   hasFullWidth?: boolean;
 };
 
 const base =
-  "flex items-center gap-2 capitalize outline-none shadow-none rounded-full py-2 px-2 transition-all duration-300 ease-in-out active:scale-95";
+  " cursor-pointer flex items-center gap-2 capitalize outline-none shadow-none rounded-full py-2 px-2 transition-all duration-300 ease-in-out active:scale-95";
 
 const styles = {
   primary: "bg-white text-black",
+  transparent: "",
 };
 
 const Button = ({
@@ -33,6 +36,8 @@ const Button = ({
   loading = false,
   icon,
   src,
+  imgWidth,
+  imgHeight,
   iconDir = "right",
   handleClick,
   className,
@@ -43,7 +48,12 @@ const Button = ({
   const Icon = icon ? (
     icon
   ) : src ? (
-    <ImageKit src={src} alt="icon" width={24} height={24} />
+    <ImageKit
+      src={src}
+      alt="icon"
+      width={imgWidth ?? 24}
+      height={imgHeight ?? 24}
+    />
   ) : null;
 
   const iconElement = loading ? <Spinner /> : Icon;
