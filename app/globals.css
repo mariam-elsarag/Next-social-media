@@ -43,4 +43,7 @@ body {
   .hover_btn {
     @apply rounded-full hover:bg-[#181818] transition-all ease-in-out duration-300;
   }
+  input {
+    @apply bg-transparent outline-none placeholder:text-textGrey placeholder:text-lg;
+  }
 }

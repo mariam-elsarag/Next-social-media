@@ -29,6 +29,7 @@ const ImageKit = ({
       alt={alt}
       className={className}
       loading={loading}
+      lqip={{ active: true, quality: 20 }}
     />
   );
 };

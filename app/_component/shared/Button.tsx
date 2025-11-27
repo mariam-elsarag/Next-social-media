@@ -14,18 +14,20 @@ type ButtonPropsType = {
   imgWidth?: number;
   imgHeight?: number;
   iconDir?: "right" | "left";
-  variant?: "primary" | "transparent";
+  variant?: "primary" | "transparent" | "error" | "primary_50";
   handleClick?: () => void;
   className?: string;
   hasFullWidth?: boolean;
 };
 
 const base =
-  " cursor-pointer flex items-center gap-2 capitalize outline-none shadow-none rounded-full py-2 px-2 transition-all duration-300 ease-in-out active:scale-95";
+  " cursor-pointer flex items-center gap-2 capitalize outline-none shadow-none rounded-full py-1.5 px-4 transition-all duration-300 ease-in-out ";
 
 const styles = {
   primary: "bg-white text-black",
+  primary_50: "bg-black/50 text-white",
   transparent: "",
+  error: "bg-red-800 text-white rounded-full",
 };
 
 const Button = ({
@@ -41,7 +43,7 @@ const Button = ({
   iconDir = "right",
   handleClick,
   className,
-  hasFullWidth = true,
+  hasFullWidth = false,
 }: ButtonPropsType) => {
   const router = useRouter();
 
